@@ -544,13 +544,18 @@ strong.number {
   }
 }
 
+.section-fundation__article p {
+  color: #fff;
+}
+
 .section-fundation__article ul {
   margin-top: 24px;
   display: flex;
   flex-direction: column;
   gap: 14px;
-    list-style-type: disc;
+  list-style-type: disc;
   list-style-position: outside; 
+  padding: 0 24px;
 }
 
 .section-fundation__article ul li::marker {
