@@ -208,7 +208,7 @@ strong.number {
 }
 @media(max-width: 800px) {
   .header__title {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
   }
 }
 
@@ -316,7 +316,7 @@ strong.number {
 }
 
 .section-hero__text-media img {
-  max-width: 260px;
+  max-width: 280px;
   height: auto;
   object-fit: contain;
   object-position: bottom;
@@ -497,6 +497,7 @@ strong.number {
   .section-fundation img {
     position: relative;
     z-index:2;
+    width: 100%;
   }
 }
 
@@ -575,13 +576,15 @@ strong.number {
 
 .section-esg__card {
   border-radius: 12px;
-  padding: 32px 20px;
+  padding: 56px 32px 20px;
   position: relative;
 }
 
 .section-esg__header {
   position: absolute;
-  width: 90%;
+  width: 88%;
+  left: 50%;
+  transform: translateX(-50%);
   color: #fff;
   text-align: center;
   padding: 15px;
@@ -594,17 +597,21 @@ strong.number {
   height: 40px;
 }
 
-.section-esg__list {
+.section-esg__list, .section-esg p  {
   list-style: disc;
-  padding-left: 20px;
-  margin: 20px 0 0 0;
-  color: #333;
+  padding-left: 12px;
+  color: #3F4144;
   font-size: 14px;
   line-height: 1.6;
 }
 
-.section-esg__list li {
-  margin-bottom: 12px;
+.section-esg__card:nth-child(2) .section-esg__list {
+  margin-left: 16px;
+} 
+
+.section-esg p {
+  padding: 0;
+  margin-bottom: 8px;
 }
 
 .section-esg__list li::marker {
@@ -615,8 +622,31 @@ strong.number {
 *********** Footer ***********
 *****************************/
 .footer {
-  padding: 40px 0px;
+  padding: 48px 0px;
   background: linear-gradient(90deg, #E04612 0%, #E5472E 43.75%, #E0005E 80.29%, #3E276D 100%);
   color: #fff;
   text-align: center;
+}
+
+.footer__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer__content h3 {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.footer__content a {
+  border: 1px solid #fff;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 16px;
+  font-weight: 700;
+  width: fit-content;
+  height: fit-content;
+  cursor: pointer;
 }
