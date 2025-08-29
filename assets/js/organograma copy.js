@@ -1,4 +1,7 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+const containerOrganograma = document.querySelector('.section-hero__organograma');
+
+containerOrganograma.innerHTML = `
+   <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
@@ -984,3 +987,5 @@ AAAAAAAAAAAAAADg/4X/AUrhBBcQ6ItzAAAAAElFTkSuQmCC
        id="path48154"
        clip-path="url(#clipPath48174)"
        style="fill:none;stroke-width:0.999999" /></g></svg>
+
+`;

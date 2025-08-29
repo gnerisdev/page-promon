@@ -132,9 +132,57 @@ strong.number {
   height: 32px;
 }
 
+.header__container-nav {
+  position: relative;
+}
+
+.arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  display: none;
+  cursor: pointer;
+  background: #E5472E;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: none;
+  outline: none;
+  border: none;
+}
+@media (max-width: 600px) {
+  .arrow {
+    display: flex; 
+  }
+}
+
+#right-arrow {
+  right: -8px;
+}
+
+#left-arrow {
+  left: 0;
+}
+
 .header__nav {
   background: #65468C;
   border-radius: 12px;
+  overflow-x: auto;
+  position: relative;
+}
+@media(max-width: 800px) {
+  .header__nav {
+    width: calc(100vw - 40px); 
+  }
+}
+
+.header__nav::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  background: transparent;
 }
 
 .header__nav ul {
@@ -143,6 +191,7 @@ strong.number {
   gap: 8px;
   list-style: none;
   padding: 0 16px;
+  min-width: 540px;
 }
 
 .header__nav ul li a{
@@ -177,12 +226,54 @@ strong.number {
     margin-top: 24px;
   }
 }
+#language-change {
+  position: relative;
+  border: 1px solid #fff;
+  height: fit-content;
+  margin: auto;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+}
+
+.language-icon-global {
+  height: 14px;
+}
+
+.language-icon-down {
+  height: 6px;
+  pointer-events: none;
+}
+
+.language-list {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  appearance: none;
+}
+
+.language-list option {
+  text-align: center;
+}
 
 /*****************************
 ******** Section Hero ********
 *****************************/
 .section-hero .container {
- 
+ position: relative;
+ z-index: 2;
 }
 @media(max-width: 992px) {
   .section-hero .container {
@@ -208,6 +299,7 @@ strong.number {
   .section-hero__text-media {
     gap: 32px;
     justify-content: space-between;
+    margin-top: -40px;
   }
 }
 @media(max-width: 676px) {
@@ -277,7 +369,7 @@ strong.number {
   padding-bottom: 0;
   margin-top: -40px;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .section-highlights .container {
@@ -447,14 +539,19 @@ strong.number {
 }
 
 /*****************************
-***** Section ESG *****
+******** Section ESG ********
 *****************************/
 .section-esg__content {
   display: grid;
   justify-content: center;
-  padding: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
+  margin-top: 72px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 56px 16px;
+}
+@media (max-width: 676px) {
+  .section-esg__content {
+    grid-template-columns: 1fr;
+  }
 }
 
 .section-esg__card:nth-child(1) {
@@ -512,4 +609,14 @@ strong.number {
 
 .section-esg__list li::marker {
   font-size: 1.4rem;
+}
+
+/*****************************
+*********** Footer ***********
+*****************************/
+.footer {
+  padding: 40px 0px;
+  background: linear-gradient(90deg, #E04612 0%, #E5472E 43.75%, #E0005E 80.29%, #3E276D 100%);
+  color: #fff;
+  text-align: center;
 }

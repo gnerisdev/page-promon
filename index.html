@@ -4,9 +4,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="Content-Security-Policy"
-    content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://use.typekit.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://use.typekit.net; img-src 'self' data: https:; font-src 'self' data: https://use.typekit.net; connect-src 'self' https://www.google-analytics.com; frame-src 'self'; object-src 'none';">
-
   <title>Promon S/A</title>
   <link rel="stylesheet" href="./assets/css/reset.css">
   <link rel="stylesheet" href="./assets/css/fonts.css">
@@ -23,14 +20,37 @@
           <img src="./assets/images/logo-promon.svg" alt="Logo Promon">
           <img src="./assets/images/selo.png" alt="Selo 65 anos Promon  ">
         </div>
-  
-        <nav class="header__nav">
-          <ul>
-            <li><a href="#">PDF Relatório Anual 2025s</a></li>
-            <li><a href="#">Demonstrações Financeiras 2025s</a></li>
-            <li><a href="#">EN</a></li>
-          </ul>
-        </nav>
+        
+        <div class="header__container-nav">
+          <button id="left-arrow" class="arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 18L9 12L15 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+
+          <nav class="header__nav">
+            <ul>
+              <li><a href="#">PDF Relatório Anual 2025s</a></li>
+              <li><a href="#">Demonstrações Financeiras 2025s</a></li>
+              <li id="language-change">
+                <img class="language-icon-global" src="./assets/images/icon-global.svg" alt="Icone Globo">
+                <span class="language-text">EN</span>
+                <img class="language-icon-down" src="./assets/images/icon-down.svg" alt="Icone Seta para baixo">
+                
+                <select class="language-list">
+                  <option value="pt">🇧🇷 PT</option>
+                  <option value="en" selected>🇺🇸 EN</option>
+                </select>
+              </li>
+            </ul>
+          </nav>
+          
+          <button id="right-arrow" class="arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M9 18L15 12L9 6" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
       </div>
 
       <div class="header__bottom">
@@ -297,10 +317,19 @@
     </section>
   </main>
 
-  <footer>
-    
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <h3>SAIBA MAIS SOBRE A PROMON S.A. E SUAS EMPRESAS</h3>
+        <p>Acesse o relatório completo de 2025s da Promon S.A.</p>
+        <a>
+          Baixar PDF Relatório Anual 2025s
+        </a>
+      </div>
+    </div>
   </footer>
 
+  <script src="./assets/js/organograma.js"></script>
   <script src="./assets/js/index.js"></script>
 </body>
 
