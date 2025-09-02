@@ -56,7 +56,7 @@ body,
 
 .text-small {
   font-weight: 400;
-  font-size: 10px;
+  font-size: 12px;
   color: #54565A;
 }
 
@@ -432,9 +432,11 @@ strong.number {
 .section-highlights__content {
   display: grid;
   grid-template-columns: 40% 60%;
+  margin-top: 72px;
 }
 @media (max-width: 800px) {
   .section-highlights__content {
+    margin-top: 32px;
     grid-template-columns: minmax(200px, 600px);
     justify-content: center;
   }
@@ -457,6 +459,10 @@ strong.number {
   .section-highlights__content .column-1, .section-highlights__content .column-2  {
     gap: 24px;
   }
+}
+
+.section-highlights__content .column-2 small {
+  font-size: 13px
 }
 
 .section-highlights .card {
@@ -492,6 +498,10 @@ strong.number {
 
 .section-highlights .blue {
   background: #194BFF;
+}
+
+.section-highlights .blue small {
+  font-size: 13px;
 }
 
 .section-highlights ul {
@@ -640,12 +650,16 @@ strong.number {
   }
 }
 
+.section-esg .container {
+  max-width: 1260px;
+} 
+
 .section-esg__content {
   display: grid;
   justify-content: center;
   margin-top: 80px;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 56px 16px;
+  gap: 80px 16px;
 }
 @media (max-width: 676px) {
   .section-esg__content {
@@ -674,7 +688,7 @@ strong.number {
 
 .section-esg__card {
   border-radius: 12px;
-  padding: 56px 32px 20px;
+  padding: 64px 16px 20px 28px;
   position: relative;
   font-family: "Lato", sans-serif;
 }
@@ -690,22 +704,33 @@ strong.number {
   border-radius: 10px 10px 0 0;
   top: -40px;
   border-radius: 12px;
+  height: 88px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .section-esg__header img {
-  height: 40px;
+  width: 160px;
 }
 
-.section-esg__list, .section-esg p {
+.section-esg__list{
   list-style: disc;
   padding-left: 12px;
   color: #3F4144;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
-.section-esg__card:nth-child(2) .section-esg__list {
-  margin-left: 16px;
+.section-esg__card:nth-child(2)  li {
+  margin-left: 24px;
 } 
+
+.section-esg__card:nth-child(2) li:first-child {
+  list-style: none;
+  margin-left: -16px;
+  margin-bottom: 16px;
+  margin-top: 8px;
+}
 
 .section-esg p {
   padding: 0;

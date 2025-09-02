@@ -1,78 +1,16 @@
-// Lógica de navegação das setas
 document.addEventListener('DOMContentLoaded', () => {
-  const nav = document.querySelector('.header__nav');
-  const leftArrow = document.getElementById('left-arrow');
-  const rightArrow = document.getElementById('right-arrow');
-
-  const scrollAmount = 100;
-
-  rightArrow.addEventListener('click', () => {
-    nav.scrollLeft += scrollAmount;
+  // Selecionar idioma
+  document.querySelector(".language-list").addEventListener("change", function () {
+    const lang = this.value;
+    if (lang === "pt") {
+      window.location.href = "/";
+    } else if (lang === "en") {
+      window.location.href = "/en";
+    }
   });
-
-  leftArrow.addEventListener('click', () => {
-    nav.scrollLeft -= scrollAmount;
-  });
-
-  const toggleArrowVisibility = () => {
-    const isFlex = window.getComputedStyle(leftArrow).display === 'flex';
-    if (!isFlex) return;
-
-    leftArrow.style.display = nav.scrollLeft <= 0 ? 'none' : 'flex';
-    rightArrow.style.display = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth ? 'none' : 'flex';
-  };
-
-  nav.addEventListener('scroll', toggleArrowVisibility);
-  window.addEventListener('resize', toggleArrowVisibility);
-  toggleArrowVisibility();
-
 
   // Lógica do modal
-  const elementosIds = [
-    "rect26516",
-    "rect30420",
-    "g23504",
-    "image47771",
-    "rect14303",
-  ];
-
-  const modalData = [
-    {
-      name: "rect26516",
-      title: "Educação em Engenharia",
-      text: "É uma empresa que tem como objetivo capacitar engenheiros por meio de uma plataforma de educação. Começou a ser desenvolvida em 2024s e, atualmente, está em fase de amadurecimento.",
-      color: "#fff",
-      bg: "#3F186F"
-    },
-    {
-      name: "rect30420",
-      title: "Promon Engenharia",
-      text: "Atua no mercado de engenharia e gerenciamento, combina expertise técnica e visão sistêmica para entregar soluções integradas nos setores de infraestrutura, energia e indústrias.",
-      color: "#fff",
-      bg: "#E04403"
-    },
-    {
-      name: "g23504",
-      title: "Forzy",
-      text: "Atua na digitalização de ativos e no desenvolvimento de soluções de eficiência para os setores industrial, de energia, infraestrutura e mercado imobiliário.",
-      color: "#000",
-      bg: "#F5A117"
-    },
-    {
-      name: "image47771",
-      title: "Logicalis Latin America",
-      text: "Provê soluções em Tecnologia da Informação e Comunicação (TIC) para diversos setores em 10 países da América Latina.",
-      color: "#fff",
-      bg: "#194BFF"
-    },
-    {
-      name: "rect14303",
-      title: "Fundação Promon de Previdência Social (FPPS)",
-      text: "É a entidade fechada de previdência complementar patrocinada pelas empresas da Promon S.A. em benefício de seus profissionais.",
-      color: "#fff",
-      bg: "#439D80"
-    },
-  ];
+  const elementosIds = ["rect26516", "rect30420", "g23504", "image47771", "rect14303"];
 
   const openModal = (data) => {
     const modal = document.getElementById('meuModal');
@@ -156,5 +94,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.addEventListener("resize", alinharFundation);
   alinharFundation();
-
 });
