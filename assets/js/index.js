@@ -2,10 +2,12 @@ document.addEventListener('DOMContentLoaded', () => {
   // Selecionar idioma
   document.querySelector(".language-list").addEventListener("change", function () {
     const lang = this.value;
+    const basePath = window.location.origin + window.location.pathname.replace(/\/(pt|en)?\/?$/, ''); // Remove a parte do idioma da URL
+
     if (lang === "pt") {
-      window.location.href = "/";
+      window.location.href = basePath;
     } else if (lang === "en") {
-      window.location.href = "/en";
+      window.location.href = `${basePath}/en/`;
     }
   });
 
